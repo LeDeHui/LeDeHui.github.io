@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一 丶安全组   ID&#x2F;名称 关联实例数 备注    sg-arn661kwMongoDB端口开放 ns-jek3wmenmongdb服务器+图片服务器 -   sg-pzxzmmroMySql数据库端口开放 ns-dq4s2kipweb服务器1（小程序+老师端+家长端+中控）lb-fll8jioz(lb-3c3261) -   sg-94o0rq9urabbitMQ远程访问 ns-je">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾讯云配置">
+<meta property="og:url" content="http://example.com/2023/08/23/%E8%85%BE%E8%AE%AF%E4%BA%91%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="ledehui的Blog">
+<meta property="og:description" content="一 丶安全组   ID&#x2F;名称 关联实例数 备注    sg-arn661kwMongoDB端口开放 ns-jek3wmenmongdb服务器+图片服务器 -   sg-pzxzmmroMySql数据库端口开放 ns-dq4s2kipweb服务器1（小程序+老师端+家长端+中控）lb-fll8jioz(lb-3c3261) -   sg-94o0rq9urabbitMQ远程访问 ns-je">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141136621.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141139726.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141140816.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141140280.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141141913.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141141275.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141141375.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141354814.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141355261.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141356795.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141357675.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141359155.png">
+<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20230814140011142.png">
+<meta property="article:published_time" content="2023-08-23T04:29:47.078Z">
+<meta property="article:modified_time" content="2023-08-23T04:40:27.588Z">
+<meta property="article:author" content="勒德辉">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141136621.png">
+
+<link rel="canonical" href="http://example.com/2023/08/23/%E8%85%BE%E8%AE%AF%E4%BA%91%E9%85%8D%E7%BD%AE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>腾讯云配置 | ledehui的Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ledehui的Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/23/%E8%85%BE%E8%AE%AF%E4%BA%91%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="勒德辉">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ledehui的Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          腾讯云配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-08-23 12:29:47 / 修改时间：12:40:27" itemprop="dateCreated datePublished" datetime="2023-08-23T12:29:47+08:00">2023-08-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="一-丶安全组"><a href="#一-丶安全组" class="headerlink" title="一 丶安全组"></a>一 丶安全组</h1><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">关联实例数</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#sg-arn661kw">sg-arn661kw</a><br />MongoDB端口开放</td>
+<td align="left"><a href="#ins-jek3wmen">ns-jek3wmen</a>mongdb服务器+图片服务器</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left"><a href="#sg-pzxzmmro">sg-pzxzmmro</a><br />MySql数据库端口开放</td>
+<td align="left"><a href="#ins-dq4s2kip">ns-dq4s2kip</a>web服务器1（小程序+老师端+家长端+中控）<br /><a href="#lb-fll8jioz">lb-fll8jioz</a>(lb-3c3261)</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left"><a href="#sg-94o0rq9u">sg-94o0rq9u</a><br />rabbitMQ远程访问</td>
+<td align="left"><a href="#ins-jek3wmen">ns-jek3wmen</a>mongdb服务器+图片服务器</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left"><a href="#sg-b7q4ujfm">sg-b7q4ujfm</a><br />放通22，80，443，3389端口和ICMP协议</td>
+<td align="left"><a href="#ins-69xx1bcd">ins-69xx1bcd</a>web服务器4（小程序+老师端+家长端+中控）<br /><a href="#ins-fdpc47r5">ins-fdpc47r5</a> web服务器2（小程序+老师端+家长端+中控）<br /><a href="#ins-p1jhiw79">ins-p1jhiw79</a> web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left">公网放通云主机常用登录及web服务端口，内网全放通。</td>
+</tr>
+<tr>
+<td align="left"><a href="#sg-4bupfxmq">sg-4bupfxmq</a><br />web服务端口</td>
+<td align="left"><a href="#lb-fll8jioz">lb-fll8jioz</a>lb-3c3261<br /><a href="#ins-dq4s2kip">ins-dq4s2kip</a> web服务器1（小程序+老师端+家长端+中控）<br /><a href="#ins-p1jhiw79">ins-p1jhiw79</a> web服务器3（小程序+老师端+家长端+中控）<br /><a href="#ins-fdpc47r5">ins-fdpc47r5</a> web服务器2（小程序+老师端+家长端+中控）<br /><a href="#ins-69xx1bcd">ins-69xx1bcd</a> web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left"><a href="#sg-dq6962x8">sg-dq6962x8</a><br />放通22，80，443，3389端口和ICMP协议-20190225102439194</td>
+<td align="left"><a href="#ins-69xx1bcd">ins-69xx1bcd</a> web服务器4（小程序+老师端+家长端+中控） <br /> <a href="#ins-fdpc47r5">ins-fdpc47r5</a> web服务器2（小程序+老师端+家长端+中控）<br /> <a href="#ins-p1jhiw79">ins-p1jhiw79</a> web服务器3（小程序+老师端+家长端+中控）<br /> <a href="#ins-0o9fnnlt">ins-0o9fnnlt</a> mysql服务器             <br /> <a href="#ins-dq4s2kip">ins-dq4s2kip</a> web服务器1（小程序+老师端+家长端+中控） <br /> <a href="#ins-jek3wmen">ins-jek3wmen</a> mongdb服务器+图片服务器 <br /><a href="#lb-fll8jioz">lb-fll8jioz</a> lb-3c3261</td>
+<td align="left">公网放通云主机常用登录及web服务端口，内网全放通。</td>
+</tr>
+</tbody></table>
+<h2 id="sg-arn661kw"><a href="#sg-arn661kw" class="headerlink" title="sg-arn661kw"></a>sg-arn661kw</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/security-group/detail/sg-arn661kw?rid=4">sg-arn661kw</a>（MongoDB端口开放）</p>
+<ol>
+<li><p>安全组规则：入站规则</p>
+<table>
+<thead>
+<tr>
+<th>规则协议</th>
+<th>端口</th>
+<th>来源</th>
+<th>策略</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCP</td>
+<td>30451</td>
+<td>182.100.14.5</td>
+<td>允许</td>
+<td>勒德辉MongoDB</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>5672</td>
+<td>219.137.53.22</td>
+<td>允许</td>
+<td>mq</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>8088</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td></td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>8100</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>cdn回源</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>443</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>放通Web服务HTTPS（443），如 Apache、Nginx</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>443</td>
+<td>::&#x2F;0</td>
+<td>允许</td>
+<td>放通Web服务HTTPS（443），如 Apache、Nginx</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>80</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>放通Web服务HTTP（80），如 Apache、Nginx</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>80</td>
+<td>::&#x2F;0</td>
+<td>允许</td>
+<td>放通Web服务HTTP（80），如 Apache、Nginx</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>30451</td>
+<td>59.42.207.97</td>
+<td>允许</td>
+<td>贺明华</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>30451</td>
+<td>116.199.103.37</td>
+<td>允许</td>
+<td>张光源地址</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>30451</td>
+<td>113.245.19.53</td>
+<td>允许</td>
+<td>小赵地址</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>30451</td>
+<td>219.137.52.165</td>
+<td>允许</td>
+<td>开发环境连接mongodb</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>30451</td>
+<td>172.17.0.4</td>
+<td>允许</td>
+<td>web连接MongoDB</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>安全组规则：出站规则</p>
+<p>无</p>
+</li>
+<li><p>关联实例</p>
+<ol>
+<li><p>云服务器</p>
+<table>
+<thead>
+<tr>
+<th align="left">实例ID&#x2F;名称</th>
+<th align="left">所属网络</th>
+<th align="left">主 IP 地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-jek3wmen">ins-jek3wmen</a><br />mongdb服务器+图片服务器</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.11(内)<br />122.152.195.189(外)</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="sg-pzxzmmro"><a href="#sg-pzxzmmro" class="headerlink" title="sg-pzxzmmro"></a>sg-pzxzmmro</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/security-group/detail/sg-pzxzmmro?rid=4">sg-pzxzmmro</a>（MySql数据库端口开放）</p>
+<ol>
+<li><p>安全组规则：入站规则</p>
+<table>
+<thead>
+<tr>
+<th>规则协议</th>
+<th>端口</th>
+<th>来源</th>
+<th>策略</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCP</td>
+<td>3306</td>
+<td>14.145.144.116</td>
+<td>允许</td>
+<td>zhaobiyu</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>3306</td>
+<td>172.17.0.3</td>
+<td>允许</td>
+<td>zhousj</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>3306</td>
+<td>172.17.0.13</td>
+<td>允许</td>
+<td>zhousj</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>3306</td>
+<td>172.17.0.16</td>
+<td>允许</td>
+<td>zhousj</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>3306</td>
+<td>59.42.206.104</td>
+<td>允许</td>
+<td>公司环境连接mysql</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>3306</td>
+<td>172.17.0.9</td>
+<td>允许</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>安全组规则：出站规则</p>
+<p>无</p>
+</li>
+<li><p>关联实例</p>
+<ol>
+<li><p>云服务器</p>
+<table>
+<thead>
+<tr>
+<th align="left">实例ID&#x2F;名称</th>
+<th align="left">所属网络</th>
+<th align="left">主 IP 地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-dq4s2kip">ins-dq4s2kip</a>web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.4(内)<br />118.25.188.77(外)</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>负载均衡</p>
+<table>
+<thead>
+<tr>
+<th align="left">实例ID&#x2F;名称</th>
+<th align="left">所属网络</th>
+<th align="left">VIP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#lb-fll8jioz">lb-fll8jioz</a><br />lb-3c3261</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">212.129.231.178</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="sg-94o0rq9u"><a href="#sg-94o0rq9u" class="headerlink" title="sg-94o0rq9u"></a>sg-94o0rq9u</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/security-group/detail/sg-94o0rq9u?rid=4">sg-94o0rq9u</a>（rabbitMQ远程访问）</p>
+<ol>
+<li><p>安全组规则：入站规则</p>
+<table>
+<thead>
+<tr>
+<th>规则协议</th>
+<th>端口</th>
+<th>来源</th>
+<th>策略</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCP</td>
+<td>5672</td>
+<td>183.6.43.109</td>
+<td>允许</td>
+<td>zgy</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>5672</td>
+<td>118.25.188.77</td>
+<td>允许</td>
+<td>web1</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>5672</td>
+<td>106.54.227.60</td>
+<td>允许</td>
+<td>web2</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>5672</td>
+<td>111.229.135.179</td>
+<td>允许</td>
+<td>web3</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>5672</td>
+<td>129.211.12.147</td>
+<td>允许</td>
+<td>web4</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>2181</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>zookeeper</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>15672</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>rabbitMQ远程</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>安全组规则：出站规则</p>
+<p>无</p>
+</li>
+<li><p>关联实例</p>
+<ol>
+<li><p>云服务器</p>
+<table>
+<thead>
+<tr>
+<th align="left">实例ID&#x2F;名称</th>
+<th align="left">所属网络</th>
+<th align="left">主 IP 地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-jek3wmen">ins-jek3wmen</a><br />mongdb服务器+图片服务器</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.11(内)<br />122.152.195.189(外)</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="sg-b7q4ujfm"><a href="#sg-b7q4ujfm" class="headerlink" title="sg-b7q4ujfm"></a>sg-b7q4ujfm</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/security-group/detail/sg-b7q4ujfm?rid=4">sg-b7q4ujfm</a>（放通22，80，443，3389端口和ICMP协议）</p>
+<ol>
+<li><p>安全组规则：入站规则</p>
+<table>
+<thead>
+<tr>
+<th>规则协议</th>
+<th>端口</th>
+<th>来源</th>
+<th>策略</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCP</td>
+<td>3389</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>放通Windows远程登录</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>80,443</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>放通Web服务端口</td>
+</tr>
+<tr>
+<td>ICMP</td>
+<td>ALL</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>放通Ping服务</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>ALL</td>
+<td>10.0.0.0&#x2F;8</td>
+<td>允许</td>
+<td>放通内网</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>ALL</td>
+<td>172.16.0.0&#x2F;12</td>
+<td>允许</td>
+<td>放通内网</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>ALL</td>
+<td>192.168.0.0&#x2F;16</td>
+<td>允许</td>
+<td>放通内网</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>安全组规则：出站规则</p>
+<table>
+<thead>
+<tr>
+<th>规则协议</th>
+<th>端口</th>
+<th>目标</th>
+<th>策略</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ALL</td>
+<td>ALL</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>关联实例</p>
+<ol>
+<li><p>云服务器</p>
+<table>
+<thead>
+<tr>
+<th align="left">实例ID&#x2F;名称</th>
+<th align="left">所属网络</th>
+<th align="left">主 IP 地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-69xx1bcd">ins-69xx1bcd</a><br />web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03btss">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.3(内)<br />129.211.12.147(外)</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-fdpc47r5">ins-fdpc47r5</a><br />web服务器2（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.13(内)<br />106.54.227.60(外)</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-p1jhiw79">ins-p1jhiw79</a><br />web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.16(内)<br />111.229.135.179(外)</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="sg-4bupfxmq"><a href="#sg-4bupfxmq" class="headerlink" title="sg-4bupfxmq"></a>sg-4bupfxmq</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/security-group/detail/sg-4bupfxmq?rid=4">sg-4bupfxmq</a>（web服务端口）</p>
+<ol>
+<li><p>安全组规则：入站规则</p>
+<table>
+<thead>
+<tr>
+<th>规则协议</th>
+<th>端口</th>
+<th>来源</th>
+<th>策略</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCP</td>
+<td>22,3389,80,443,20,21</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>一键放通入站规则</td>
+</tr>
+<tr>
+<td>ICMP</td>
+<td>ALL</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>一键放通入站规则</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>安全组规则：出站规则</p>
+<p>无</p>
+</li>
+<li><p>关联实例</p>
+<ol>
+<li><p>云服务器</p>
+<table>
+<thead>
+<tr>
+<th align="left">实例ID&#x2F;名称</th>
+<th align="left">所属网络</th>
+<th align="left">主 IP 地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">.<a href="#ins-69xx1bcd">ins-69xx1bcd</a><br />web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.3(内)<br />129.211.12.147(外)</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-fdpc47r5">ins-fdpc47r5</a><br />web服务器2（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.13(内)<br />106.54.227.60(外)</td>
+</tr>
+<tr>
+<td align="left">.<a href="#ins-p1jhiw79">ins-p1jhiw79</a><br />web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.16(内)<br />111.229.135.179(外)</td>
+</tr>
+<tr>
+<td align="left">.<a href="#ins-dq4s2kip">ins-dq4s2kip</a><br />web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.4(内)<br />118.25.188.77(外)</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>负载均衡</p>
+<table>
+<thead>
+<tr>
+<th align="left">实例ID&#x2F;名称</th>
+<th align="left">所属网络</th>
+<th align="left">VIP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#lb-fll8jioz">lb-fll8jioz</a><br />lb-3c3261</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">212.129.231.178</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="sg-dq6962x8"><a href="#sg-dq6962x8" class="headerlink" title="sg-dq6962x8"></a>sg-dq6962x8</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/security-group/detail/sg-dq6962x8?rid=4">sg-dq6962x8</a>（放通22，80，443，3389端口和ICMP协议-20190225102439194）<br> sg-dq6962x8)</p>
+<ol>
+<li><p>安全组规则：入站规则</p>
+<table>
+<thead>
+<tr>
+<th>规则协议</th>
+<th>端口</th>
+<th>来源</th>
+<th>策略</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TCP</td>
+<td>6379</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>Linux redis 访问</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>3306</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td></td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>3389</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>放通Windows远程登录</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>22</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>放通Linux SSH登录</td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>80,443</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>放通Web服务端口</td>
+</tr>
+<tr>
+<td>ICMP</td>
+<td>ALL</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td>放通Ping服务</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>ALL</td>
+<td>10.0.0.0&#x2F;8</td>
+<td>允许</td>
+<td>放通内网</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>ALL</td>
+<td>172.16.0.0&#x2F;12</td>
+<td>允许</td>
+<td>放通内网</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>ALL</td>
+<td>192.168.0.0&#x2F;16</td>
+<td>允许</td>
+<td>放通内网</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>安全组规则：出站规则</p>
+<table>
+<thead>
+<tr>
+<th>规则协议</th>
+<th>端口</th>
+<th>目标</th>
+<th>策略</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ALL</td>
+<td>ALL</td>
+<td>0.0.0.0&#x2F;0</td>
+<td>允许</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>关联实例</p>
+<ol>
+<li><p>云服务器</p>
+<table>
+<thead>
+<tr>
+<th align="left">实例ID&#x2F;名称</th>
+<th align="left">所属网络</th>
+<th align="left">主 IP 地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-69xx1bcd">ins-69xx1bcd</a><br />web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.3(内)<br />129.211.12.147(外)</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-fdpc47r5">ins-fdpc47r5</a><br />web服务器2（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.13(内)<br />106.54.227.60(外)</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-p1jhiw79">ins-p1jhiw79</a><br />web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.16(内)<br />111.229.135.179(外)</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-0o9fnnlt">ins-0o9fnnlt</a><br />mysql服务器</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.9(内)<br />118.25.99.231(外)</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-dq4s2kip">ins-dq4s2kip</a><br />web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.4(内)<br />118.25.188.77(外)</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-jek3wmen">ins-jek3wmen</a><br />mongdb服务器+图片服务器</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.11(内)<br />122.152.195.189(外)</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>负载均衡</p>
+<table>
+<thead>
+<tr>
+<th align="left">实例ID&#x2F;名称</th>
+<th align="left">所属网络</th>
+<th align="left">VIP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#lb-fll8jioz">lb-fll8jioz</a><br />lb-3c3261</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">212.129.231.178</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="二丶负载均衡"><a href="#二丶负载均衡" class="headerlink" title="二丶负载均衡"></a>二丶负载均衡</h1><h2 id="lb-fll8jioz"><a href="#lb-fll8jioz" class="headerlink" title="lb-fll8jioz"></a><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/clb/detail?rid=4&id=lb-fll8jioz">lb-fll8jioz</a></h2><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">VIP&#x2F;EIP</th>
+<th align="left">可用区</th>
+<th align="left">网络类型</th>
+<th align="left">所属网络</th>
+<th align="left">实例规格</th>
+<th align="left">健康状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/clb/detail?rid=4&id=lb-fll8jioz">lb-fll8jioz</a><br />lb-3c3261</td>
+<td align="left">212.129.231.178</td>
+<td align="left">上海五区</td>
+<td align="left">公网</td>
+<td align="left"><a href="#vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC (172.17.0.0&#x2F;16)</td>
+<td align="left">共享型</td>
+<td align="left">正常</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="监听配置"><a href="#监听配置" class="headerlink" title="监听配置"></a>监听配置</h2><h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141136621.png" alt="image-20230814113639474" style="zoom: 50%;" />
+
+<h3 id="监听管理器"><a href="#监听管理器" class="headerlink" title="监听管理器"></a>监听管理器</h3><h4 id="HTTPS-443-小鲸小程序"><a href="#HTTPS-443-小鲸小程序" class="headerlink" title="HTTPS:443 小鲸小程序"></a>HTTPS:443 小鲸小程序</h4><p>SSL解析方式：单向认证 </p>
+<p>服务器证书：未命名&#x2F;<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/clb/cert-detail?id=5DikvLuN">5DikvLuN</a> RSA 20482024-05-06 07:59:59过期</p>
+<h5 id="sp-shuobaobook-com"><a href="#sp-shuobaobook-com" class="headerlink" title="sp.shuobaobook.com"></a>sp.shuobaobook.com</h5><p>HTTP2.0：启用</p>
+<p>QUIC：关闭</p>
+<p><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141139726.png" alt="image-20230814113937520" style="zoom:25%;" /><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141140816.png" alt="image-20230814114005476" style="zoom:25%;" /><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141140280.png" alt="image-20230814114042051" style="zoom:25%;" /></p>
+<h6 id="已绑定后端服务"><a href="#已绑定后端服务" class="headerlink" title="已绑定后端服务"></a><strong>已绑定后端服务</strong></h6><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">端口健康状态</th>
+<th align="left">IP地址</th>
+<th align="left">端口</th>
+<th align="left">权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-dq4s2kip">ins-dq4s2kip</a><br />web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">118.25.188.77(公) <br />172.17.0.4(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-p1jhiw79">ins-p1jhiw79</a><br />web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">111.229.135.179(公) <br />172.17.0.16(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-fdpc47r5">ins-fdpc47r5</a><br />web服务器2（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">106.54.227.60(公)<br /> 172.17.0.13(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-69xx1bcd">ins-69xx1bcd</a><br />web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">129.211.12.147(公) <br />172.17.0.3(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+</tbody></table>
+<h4 id="HTTP-80-小鲸伴读"><a href="#HTTP-80-小鲸伴读" class="headerlink" title="HTTP:80 小鲸伴读"></a>HTTP:80 小鲸伴读</h4><h5 id="admin-shuobaobook-com"><a href="#admin-shuobaobook-com" class="headerlink" title="admin.shuobaobook.com"></a>admin.shuobaobook.com</h5><h6 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h6><p><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141141913.png" alt="image-20230814114108650"  /><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141141275.png" alt="image-20230814114120052"  /><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141141375.png" alt="image-20230814114128274"  /></p>
+<h6 id="已绑定后端服务-1"><a href="#已绑定后端服务-1" class="headerlink" title="已绑定后端服务"></a><strong>已绑定后端服务</strong></h6><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">端口健康状态</th>
+<th align="left">IP地址</th>
+<th align="left">端口</th>
+<th align="left">权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-dq4s2kip">ins-dq4s2kip</a><br />web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">118.25.188.77(公) <br />172.17.0.4(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-p1jhiw79">ins-p1jhiw79</a><br />web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">111.229.135.179(公) <br />172.17.0.16(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-fdpc47r5">ins-fdpc47r5</a><br />web服务器2（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">106.54.227.60(公)<br /> 172.17.0.13(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-69xx1bcd">ins-69xx1bcd</a><br />web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">129.211.12.147(公) <br />172.17.0.3(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+</tbody></table>
+<h5 id="parent-shuobaobook-com"><a href="#parent-shuobaobook-com" class="headerlink" title="parent.shuobaobook.com"></a>parent.shuobaobook.com</h5><p>配置信息参考admin.shuobaobook.com</p>
+<h6 id="已绑定后端服务-2"><a href="#已绑定后端服务-2" class="headerlink" title="已绑定后端服务"></a><strong>已绑定后端服务</strong></h6><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">端口健康状态</th>
+<th align="left">IP地址</th>
+<th align="left">端口</th>
+<th align="left">权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-dq4s2kip">ins-dq4s2kip</a><br />web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">118.25.188.77(公) <br />172.17.0.4(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-p1jhiw79">ins-p1jhiw79</a><br />web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">111.229.135.179(公) <br />172.17.0.16(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-fdpc47r5">ins-fdpc47r5</a><br />web服务器2（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">106.54.227.60(公)<br /> 172.17.0.13(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-69xx1bcd">ins-69xx1bcd</a><br />web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">129.211.12.147(公) <br />172.17.0.3(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+</tbody></table>
+<h5 id="school-shuobaobook-com"><a href="#school-shuobaobook-com" class="headerlink" title="school.shuobaobook.com"></a>school.shuobaobook.com</h5><p>配置信息参考admin.shuobaobook.com</p>
+<h6 id="已绑定后端服务-3"><a href="#已绑定后端服务-3" class="headerlink" title="已绑定后端服务"></a><strong>已绑定后端服务</strong></h6><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">端口健康状态</th>
+<th align="left">IP地址</th>
+<th align="left">端口</th>
+<th align="left">权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-dq4s2kip">ins-dq4s2kip</a><br />web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">118.25.188.77(公) <br />172.17.0.4(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-p1jhiw79">ins-p1jhiw79</a><br />web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">111.229.135.179(公) <br />172.17.0.16(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-fdpc47r5">ins-fdpc47r5</a><br />web服务器2（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">106.54.227.60(公)<br /> 172.17.0.13(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-69xx1bcd">ins-69xx1bcd</a><br />web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">129.211.12.147(公) <br />172.17.0.3(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+</tbody></table>
+<h5 id="sp-shuobaobook-com-1"><a href="#sp-shuobaobook-com-1" class="headerlink" title="sp.shuobaobook.com"></a>sp.shuobaobook.com</h5><p>配置信息参考admin.shuobaobook.com</p>
+<h6 id="已绑定后端服务-4"><a href="#已绑定后端服务-4" class="headerlink" title="已绑定后端服务"></a><strong>已绑定后端服务</strong></h6><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">端口健康状态</th>
+<th align="left">IP地址</th>
+<th align="left">端口</th>
+<th align="left">权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-dq4s2kip">ins-dq4s2kip</a><br />web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">118.25.188.77(公) <br />172.17.0.4(内)</td>
+<td align="left">80</td>
+<td align="left">100</td>
+</tr>
+</tbody></table>
+<h5 id="teacher-shuobaobook-com"><a href="#teacher-shuobaobook-com" class="headerlink" title="teacher.shuobaobook.com"></a>teacher.shuobaobook.com</h5><p>配置信息参考admin.shuobaobook.com</p>
+<h6 id="已绑定后端服务-5"><a href="#已绑定后端服务-5" class="headerlink" title="已绑定后端服务"></a><strong>已绑定后端服务</strong></h6><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">端口健康状态</th>
+<th align="left">IP地址</th>
+<th align="left">端口</th>
+<th align="left">权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a href="#ins-dq4s2kip">ins-dq4s2kip</a><br />web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">118.25.188.77(公) <br />172.17.0.4(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-p1jhiw79">ins-p1jhiw79</a><br />web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">111.229.135.179(公) <br />172.17.0.16(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-fdpc47r5">ins-fdpc47r5</a><br />web服务器2（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">106.54.227.60(公)<br /> 172.17.0.13(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-69xx1bcd">ins-69xx1bcd</a><br />web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left">健康</td>
+<td align="left">129.211.12.147(公) <br />172.17.0.3(内)</td>
+<td align="left">80</td>
+<td align="left">25</td>
+</tr>
+</tbody></table>
+<h3 id="重定向配置"><a href="#重定向配置" class="headerlink" title="重定向配置"></a>重定向配置</h3><p>无</p>
+<h4 id="安全组"><a href="#安全组" class="headerlink" title="安全组"></a>安全组</h4><h5 id="已绑定安全组"><a href="#已绑定安全组" class="headerlink" title="已绑定安全组"></a>已绑定安全组</h5><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">优先级</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><a href="#sg-dq6962x8">sg-dq6962x8</a><br>放通22，80，443，3389端口和ICMP协议-20190225102439194</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><a href="#sg-pzxzmmro">sg-pzxzmmro</a><br>MySql数据库端口开放</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><a href="#sg-4bupfxmq">sg-4bupfxmq</a><br>web服务端口</td>
+</tr>
+</tbody></table>
+<h1 id="三丶内容分发CDN"><a href="#三丶内容分发CDN" class="headerlink" title="三丶内容分发CDN"></a>三丶内容分发CDN</h1><h2 id="CND域名"><a href="#CND域名" class="headerlink" title="CND域名"></a>CND域名</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cdn/domains">media.shuobaobook.com</a></p>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><h3 id="基本信息-1"><a href="#基本信息-1" class="headerlink" title="基本信息"></a>基本信息</h3><p>加速区域：中国境内</p>
+<p><strong>加速域名：media.shuobaobook.com</strong></p>
+<p><strong>CNAMEmedia.shuobaobook.com.cdn.dnsv1.com</strong> (解析生效)备用CNAME（CNAME(media.shuobaobook.com.cdn.dnsv1.com.cn)尚未解析）</p>
+<p>创建时间：2020-06-10 17:33:45</p>
+<p>所属项目：默认项目修改</p>
+<p>加速类型：CDN 网页小文件</p>
+<p>IPv6访问：未开启 （开启后，支持通过IPv6协议进行访问）</p>
+<p>标签：无</p>
+<h3 id="源站信息"><a href="#源站信息" class="headerlink" title="源站信息"></a>源站信息</h3><h3 id="主源站"><a href="#主源站" class="headerlink" title="主源站"></a>主源站</h3><p>源站类型：自有源站</p>
+<p>回源协议：HTTP</p>
+<p>源站地址：</p>
+<table>
+<thead>
+<tr>
+<th align="left">回源规则</th>
+<th align="left">回源地址</th>
+<th align="left">地址类型</th>
+<th align="left">端口</th>
+<th align="left">权重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">全部文件</td>
+<td align="left">122.152.195.189</td>
+<td align="left">IPv4</td>
+<td align="left">8100</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+<p>回源HOST：media.shuobaobook.com</p>
+<h2 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h2><h3 id="访问端口"><a href="#访问端口" class="headerlink" title="访问端口"></a>访问端口</h3><p>80&#x2F;8080</p>
+<h2 id="缓存设置"><a href="#缓存设置" class="headerlink" title="缓存设置"></a>缓存设置</h2><h3 id="缓存键规则配置"><a href="#缓存键规则配置" class="headerlink" title="缓存键规则配置"></a>缓存键规则配置</h3><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">内容</th>
+<th align="left">忽略参数</th>
+<th align="left">忽略大小写</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">全部文件</td>
+<td align="left">全部文件</td>
+<td align="left">不忽略</td>
+<td align="left">否</td>
+</tr>
+</tbody></table>
+<p> <img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141354814.png" alt="image-20230814135416646"></p>
+<h3 id="节点缓存过期配置"><a href="#节点缓存过期配置" class="headerlink" title="节点缓存过期配置"></a>节点缓存过期配置</h3><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">内容</th>
+<th align="left">缓存时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">全部文件</td>
+<td align="left">全部文件</td>
+<td align="left">30天</td>
+</tr>
+</tbody></table>
+<p><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141355261.png" alt="image-20230814135515081"></p>
+<h3 id="状态码缓存"><a href="#状态码缓存" class="headerlink" title="状态码缓存"></a>状态码缓存</h3><table>
+<thead>
+<tr>
+<th align="left">状态码</th>
+<th align="left">缓存时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">404</td>
+<td align="left">10秒</td>
+</tr>
+</tbody></table>
+<p><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141356795.png" alt="image-20230814135607643"></p>
+<h2 id="回源配置"><a href="#回源配置" class="headerlink" title="回源配置"></a>回源配置</h2><h3 id="分片回源配置"><a href="#分片回源配置" class="headerlink" title="分片回源配置"></a>分片回源配置</h3><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">内容</th>
+<th align="left">分片回源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">全部文件</td>
+<td align="left">全部文件</td>
+<td align="left">开启</td>
+</tr>
+</tbody></table>
+<p><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141357675.png" alt="image-20230814135701526"></p>
+<h3 id="回源跟随301-302配置"><a href="#回源跟随301-302配置" class="headerlink" title="回源跟随301&#x2F;302配置"></a>回源跟随301&#x2F;302配置</h3><p>开启</p>
+<h3 id="回源超时配置"><a href="#回源超时配置" class="headerlink" title="回源超时配置"></a>回源超时配置</h3><p>TCP连接时间：5秒</p>
+<p>回源加载时间：10秒</p>
+<h2 id="HTTPS配置"><a href="#HTTPS配置" class="headerlink" title="HTTPS配置"></a>HTTPS配置</h2><h3 id="HTTPS服务（付费）"><a href="#HTTPS服务（付费）" class="headerlink" title="HTTPS服务（付费）"></a>HTTPS服务（付费）</h3><p>开启</p>
+<h3 id="HTTPS配置-1"><a href="#HTTPS配置-1" class="headerlink" title="HTTPS配置"></a>HTTPS配置</h3><table>
+<thead>
+<tr>
+<th align="left">证书来源</th>
+<th align="left">证书备注</th>
+<th align="left">到期时间</th>
+<th align="left">证书状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">腾讯云托管证书</td>
+<td align="left">–</td>
+<td align="left">2024-05-06 07:59:59</td>
+<td align="left">配置成功</td>
+</tr>
+</tbody></table>
+<h3 id="TLS版本配置"><a href="#TLS版本配置" class="headerlink" title="TLS版本配置"></a>TLS版本配置</h3><p>TLS 1.0已开启  	TLS 1.1已开启		TLS 1.2已开启		TLS 1.3未开启</p>
+<h3 id="OCSP装订配置"><a href="#OCSP装订配置" class="headerlink" title="OCSP装订配置"></a>OCSP装订配置</h3><p>开启</p>
+<h2 id="高级配置"><a href="#高级配置" class="headerlink" title="高级配置"></a>高级配置</h2><h3 id="HTTP响应头配置"><a href="#HTTP响应头配置" class="headerlink" title="HTTP响应头配置"></a>HTTP响应头配置</h3><table>
+<thead>
+<tr>
+<th align="left">头部操作</th>
+<th align="left">头部参数</th>
+<th align="left">头部取值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">设置</td>
+<td align="left">Access-Control-Allow-Origin</td>
+<td align="left">*</td>
+</tr>
+</tbody></table>
+<p><img src="https://raw.githubusercontent.com/LeDeHui/mypicgo/main/2023/08/202308141359155.png" alt="image-20230814135931006"></p>
+<h3 id="智能压缩"><a href="#智能压缩" class="headerlink" title="智能压缩"></a>智能压缩</h3><table>
+<thead>
+<tr>
+<th align="left">压缩对象</th>
+<th align="left">文件范围</th>
+<th align="left">压缩方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">文件后缀:js;html;css;xml;json;shtml;htm</td>
+<td align="left">256B ~ 2MB</td>
+<td align="left">gzip</td>
+</tr>
+</tbody></table>
+<p><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20230814140011142.png" alt="image-20230814140011142"></p>
+<h3 id="POST请求大小配置"><a href="#POST请求大小配置" class="headerlink" title="POST请求大小配置"></a>POST请求大小配置</h3><p>关闭</p>
+<h1 id="四丶私有网络"><a href="#四丶私有网络" class="headerlink" title="四丶私有网络"></a>四丶私有网络</h1><h2 id="vpc-7np03bts"><a href="#vpc-7np03bts" class="headerlink" title="vpc-7np03bts"></a>vpc-7np03bts</h2><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">IPv4 CIDR</th>
+<th align="left">子网</th>
+<th align="left">路由表</th>
+<th align="left">NAT 网关</th>
+<th align="left">VPN 网关</th>
+<th align="left">云服务器</th>
+<th align="left">专线网关</th>
+<th align="left">默认私有网络</th>
+<th align="left">创建时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc/detail?rid=4&id=vpc-7np03bts">vpc-7np03bts</a><br />Default-VPC</td>
+<td align="left">172.17.0.0&#x2F;16</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/subnet?rid=4&unVpcId=vpc-7np03bts">1</a></td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/route?rid=4&unVpcId=vpc-7np03bts">1</a></td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/index?vpcId=vpc-7np03bts">6</a></td>
+<td align="left">0</td>
+<td align="left">是</td>
+<td align="left">2019-02-25 10:23:37</td>
+</tr>
+</tbody></table>
+<h2 id="基本信息-2"><a href="#基本信息-2" class="headerlink" title="基本信息"></a>基本信息</h2><h3 id="基本信息-3"><a href="#基本信息-3" class="headerlink" title="基本信息"></a>基本信息</h3><p>ID：vpc-7np03bts</p>
+<p>名称：Default-VPC</p>
+<p>IPv4 CIDR：172.17.0.0&#x2F;16（主）</p>
+<p>DNS：183.60.82.98,183.60.83.19</p>
+<p>Domain Name：-</p>
+<p>标签：暂无标签</p>
+<h3 id="包含资源"><a href="#包含资源" class="headerlink" title="包含资源"></a>包含资源</h3><p>基础云资源:</p>
+<p>​	<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm?rid=4&vpcId=vpc-7np03bts">云服务器 : 6</a></p>
+<p>网络资源:</p>
+<p>​	<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/subnet?unVpcId=vpc-7np03bts&rid=4">子网:<em>1</em></a></p>
+<p>​	<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/route?unVpcId=vpc-7np03bts&rid=4">路由表:<em>1</em></a></p>
+<p>​	<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/eni?unVpcId=vpc-7np03bts&rid=4">弹性网卡:<em>6</em></a></p>
+<p>网络连接:</p>
+<p>无</p>
+<p>其它云资源:</p>
+<p>无</p>
+<h1 id="五丶云服务器"><a href="#五丶云服务器" class="headerlink" title="五丶云服务器"></a>五丶云服务器</h1><table>
+<thead>
+<tr>
+<th align="left">ID&#x2F;名称</th>
+<th align="left">可用区</th>
+<th align="left">实例类型</th>
+<th align="left">实例配置</th>
+<th align="left">主IPv4地址</th>
+<th align="left">实例计费模式</th>
+<th align="left">网络计费模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-69xx1bcd&searchParams=rid=4">ins-69xx1bcd</a><br />web服务器4（小程序+老师端+家长端+中控）</td>
+<td align="left">上海二区</td>
+<td align="left">I2</td>
+<td align="left">8核 16GB 200Mbps系统盘：高性能云硬盘网络：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?rid=4&unVpcId=vpc-7np03bts">Default-VPC</a></td>
+<td align="left">129.211.12.147（公）172.17.0.3（内）</td>
+<td align="left">包年包月2024-03-1013:49:40到期</td>
+<td align="left">按流量计费</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-fdpc47r5&searchParams=rid=4">ins-fdpc47r5</a><br />web服务器2（小程序+老师端+家长端+中控）</td>
+<td align="left">上海二区</td>
+<td align="left">I2</td>
+<td align="left">8核 16GB 200Mbps系统盘：高性能云硬盘网络：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?rid=4&unVpcId=vpc-7np03bts">Default-VPC</a></td>
+<td align="left">106.54.227.60（公）172.17.0.13（内）</td>
+<td align="left">包年包月2024-03-1013:49:36到期</td>
+<td align="left">按流量计费</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-p1jhiw79&searchParams=rid=4">ins-p1jhiw79</a><br />web服务器3（小程序+老师端+家长端+中控）</td>
+<td align="left">上海二区</td>
+<td align="left">I2</td>
+<td align="left">8核 16GB 200Mbps系统盘：高性能云硬盘网络：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?rid=4&unVpcId=vpc-7np03bts">Default-VPC</a></td>
+<td align="left">111.229.135.179（公）172.17.0.16（内）</td>
+<td align="left">包年包月2024-03-1013:49:39到期</td>
+<td align="left">按流量计费</td>
+</tr>
+<tr>
+<td align="left"><a href="#ins-0o9fnnlt">ins-0o9fnnlt</a><br />mysql服务器</td>
+<td align="left">上海二区</td>
+<td align="left">I2</td>
+<td align="left">8核 16GB 200Mbps系统盘：高性能云硬盘网络：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?rid=4&unVpcId=vpc-7np03bts">Default-VPC</a></td>
+<td align="left">118.25.99.231（公）172.17.0.9（内）</td>
+<td align="left">包年包月2024-02-2518:41:16到期</td>
+<td align="left">按流量计费</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-dq4s2kip&searchParams=rid=4">ins-dq4s2kip</a><br />web服务器1（小程序+老师端+家长端+中控）</td>
+<td align="left">上海二区</td>
+<td align="left">I2</td>
+<td align="left">8核 16GB 200Mbps系统盘：高性能云硬盘网络：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?rid=4&unVpcId=vpc-7np03bts">Default-VPC</a></td>
+<td align="left">118.25.188.77（公）172.17.0.4（内）</td>
+<td align="left">包年包月2024-03-0518:41:14到期</td>
+<td align="left">按流量计费</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-jek3wmen&searchParams=rid=4">ins-jek3wmen</a><br />mongdb服务器+图片服务器</td>
+<td align="left">上海二区</td>
+<td align="left">I2</td>
+<td align="left">8核 16GB 200Mbps系统盘：高性能云硬盘网络：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?rid=4&unVpcId=vpc-7np03bts">Default-VPC</a></td>
+<td align="left">122.152.195.189（公）172.17.0.11（内）</td>
+<td align="left">包年包月2024-02-2518:41:12到期</td>
+<td align="left">按流量计费</td>
+</tr>
+</tbody></table>
+<h2 id="ins-69xx1bcd"><a href="#ins-69xx1bcd" class="headerlink" title="ins-69xx1bcd"></a>ins-69xx1bcd</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?searchParams=rid=4&rid=4&id=ins-69xx1bcd">ins-69xx1bcd</a> web服务器4（小程序+老师端+家长端+中控）</p>
+<h3 id="基本信息-4"><a href="#基本信息-4" class="headerlink" title="基本信息"></a>基本信息</h3><p>实例规格：I2 | I2.2XLARGE16</p>
+<p>所属网络： <a href="#vpc-7np03bts">vpc-7np03bts</a>(Default-VPC|172.17.0.0&#x2F;16)</p>
+<p>所属子网：<a href="#subnet-5gcxlcwn">subnet-5gcxlcwn</a>(Default-Subnet)</p>
+<p>主IPv4内网IP：172.17.0.3</p>
+<p>主IPv4公网IP：129.211.12.147</p>
+<p>操作系统：CentOS 7.6 64位</p>
+<p>CPU：8核</p>
+<p>内存：16GB</p>
+<p>公网带宽：200Mbps</p>
+<h3 id="安全组-1"><a href="#安全组-1" class="headerlink" title="安全组"></a>安全组</h3><table>
+<thead>
+<tr>
+<th align="left">优先级</th>
+<th align="left">安全组ID&#x2F;名称</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><a href="#sg-4bupfxmq">sg-4bupfxmq</a>web服务端口</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-dq6962x8?rid=4">sg-dq6962x8</a>放通22，80，443，3389端口和ICMP协议-20190225102439194</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-b7q4ujfm?rid=4">sg-b7q4ujfm</a>放通22，80，443，3389端口和ICMP协议</td>
+<td align="left">解绑</td>
+</tr>
+</tbody></table>
+<h2 id="ins-fdpc47r5"><a href="#ins-fdpc47r5" class="headerlink" title="ins-fdpc47r5"></a>ins-fdpc47r5</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-fdpc47r5&searchParams=rid=4">ins-fdpc47r5</a> web服务器2（小程序+老师端+家长端+中控）</p>
+<h3 id="基本信息-5"><a href="#基本信息-5" class="headerlink" title="基本信息"></a>基本信息</h3><p>实例规格:I2 | I2.2XLARGE16</p>
+<p>所属网络:<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?regionId=4&unVpcId=vpc-7np03bts">vpc-7np03bts</a>(Default-VPC|172.17.0.0&#x2F;16)</p>
+<p>所属子网:<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/subnet?regionId=4&subnetId=subnet-5gcxlcwn">subnet-5gcxlcwn</a>(Default-Subnet)</p>
+<p>主IPv4公网IP:106.54.227.60</p>
+<p>主IPv4内网IP:172.17.0.13</p>
+<p>操作系统:CentOS 7.6 64位</p>
+<p>CPU:8核</p>
+<p>内存:16GB</p>
+<p>公网带宽:200Mbps</p>
+<h3 id="安全组-2"><a href="#安全组-2" class="headerlink" title="安全组"></a>安全组</h3><table>
+<thead>
+<tr>
+<th align="left">优先级</th>
+<th align="left">安全组ID&#x2F;名称</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-4bupfxmq?rid=4">sg-4bupfxmq</a>web服务端口</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-dq6962x8?rid=4">sg-dq6962x8</a>放通22，80，443，3389端口和ICMP协议-20190225102439194</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-b7q4ujfm?rid=4">sg-b7q4ujfm</a>放通22，80，443，3389端口和ICMP协议</td>
+<td align="left">解绑</td>
+</tr>
+</tbody></table>
+<h2 id="ins-p1jhiw79"><a href="#ins-p1jhiw79" class="headerlink" title="ins-p1jhiw79"></a>ins-p1jhiw79</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-p1jhiw79&searchParams=rid=4">ins-p1jhiw79</a>  web服务器3（小程序+老师端+家长端+中控）</p>
+<h3 id="基本信息-6"><a href="#基本信息-6" class="headerlink" title="基本信息"></a>基本信息</h3><p>实例规格:I2 | I2.2XLARGE16</p>
+<p>所属网络:<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?regionId=4&unVpcId=vpc-7np03bts">vpc-7np03bts</a>(Default-VPC|172.17.0.0&#x2F;16)</p>
+<p>所属子网:<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/subnet?regionId=4&subnetId=subnet-5gcxlcwn">subnet-5gcxlcwn</a>(Default-Subnet)</p>
+<p>主IPv4公网IP:111.229.135.179</p>
+<p>主IPv4内网IP:172.17.0.16</p>
+<p>操作系统:CentOS 7.6 64位</p>
+<p>CPU:8核</p>
+<p>内存:16GB</p>
+<p>公网带宽:200Mbps</p>
+<h3 id="安全组-3"><a href="#安全组-3" class="headerlink" title="安全组"></a>安全组</h3><table>
+<thead>
+<tr>
+<th align="left">优先级</th>
+<th align="left">安全组ID&#x2F;名称</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-4bupfxmq?rid=4">sg-4bupfxmq</a>web服务端口</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-dq6962x8?rid=4">sg-dq6962x8</a>放通22，80，443，3389端口和ICMP协议-20190225102439194</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-b7q4ujfm?rid=4">sg-b7q4ujfm</a>放通22，80，443，3389端口和ICMP协议</td>
+<td align="left">解绑</td>
+</tr>
+</tbody></table>
+<h2 id="ins-0o9fnnlt"><a href="#ins-0o9fnnlt" class="headerlink" title="ins-0o9fnnlt"></a>ins-0o9fnnlt</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-0o9fnnlt&searchParams=rid=4">ins-0o9fnnlt</a>  mysql服务器</p>
+<h3 id="基本信息-7"><a href="#基本信息-7" class="headerlink" title="基本信息"></a>基本信息</h3><p>实例规格：I2 | I2.2XLARGE16</p>
+<p>所属网络：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?regionId=4&unVpcId=vpc-7np03bts">vpc-7np03bts</a>(Default-VPC|172.17.0.0&#x2F;16)</p>
+<p>所属子网：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/subnet?regionId=4&subnetId=subnet-5gcxlcwn">subnet-5gcxlcwn</a>(Default-Subnet)</p>
+<p>主IPv4公网IP：118.25.99.231</p>
+<p>主IPv4内网IP：172.17.0.9</p>
+<p>操作系统：CentOS 7.5 64位</p>
+<p>CPU：8核</p>
+<p>内存：16GB</p>
+<p>公网带宽：200Mbps</p>
+<h3 id="安全组-4"><a href="#安全组-4" class="headerlink" title="安全组"></a>安全组</h3><table>
+<thead>
+<tr>
+<th align="left">优先级</th>
+<th align="left">安全组ID&#x2F;名称</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-dq6962x8?rid=4">sg-dq6962x8</a>放通22，80，443，3389端口和ICMP协议-20190225102439194</td>
+<td align="left">解绑</td>
+</tr>
+</tbody></table>
+<h2 id="ins-dq4s2kip"><a href="#ins-dq4s2kip" class="headerlink" title="ins-dq4s2kip"></a>ins-dq4s2kip</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-dq4s2kip&searchParams=rid=4">ins-dq4s2kip</a>  web服务器1（小程序+老师端+家长端+中控）</p>
+<h3 id="基本信息-8"><a href="#基本信息-8" class="headerlink" title="基本信息"></a>基本信息</h3><p>实例规格：I2 | I2.2XLARGE16</p>
+<p>所属网络：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?regionId=4&unVpcId=vpc-7np03bts">vpc-7np03bts</a>(Default-VPC|172.17.0.0&#x2F;16)</p>
+<p>所属子网：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/subnet?regionId=4&subnetId=subnet-5gcxlcwn">subnet-5gcxlcwn</a>(Default-Subnet)</p>
+<p>主IPv4公网IP：118.25.188.77</p>
+<p>主IPv4内网IP：172.17.0.4</p>
+<p>操作系统：CentOS 7.5 64位</p>
+<p>CPU：8核</p>
+<p>内存：16GB</p>
+<p>公网带宽：200Mbps</p>
+<h3 id="安全组-5"><a href="#安全组-5" class="headerlink" title="安全组"></a>安全组</h3><table>
+<thead>
+<tr>
+<th align="left">优先级</th>
+<th align="left">安全组ID&#x2F;名称</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-pzxzmmro?rid=4">sg-pzxzmmro</a>MySql数据库端口开放</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-4bupfxmq?rid=4">sg-4bupfxmq</a>web服务端口</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-dq6962x8?rid=4">sg-dq6962x8</a>放通22，80，443，3389端口和ICMP协议-20190225102439194</td>
+<td align="left">解绑</td>
+</tr>
+</tbody></table>
+<h2 id="ins-jek3wmen"><a href="#ins-jek3wmen" class="headerlink" title="ins-jek3wmen"></a>ins-jek3wmen</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cvm/instance/detail?rid=4&id=ins-jek3wmen&searchParams=rid=4">ins-jek3wmen</a>  mongdb服务器+图片服务器</p>
+<h3 id="基本信息-9"><a href="#基本信息-9" class="headerlink" title="基本信息"></a>基本信息</h3><p>实例规格：I2 | I2.2XLARGE16</p>
+<p>所属网络：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/vpc?regionId=4&unVpcId=vpc-7np03bts">vpc-7np03bts</a>(Default-VPC|172.17.0.0&#x2F;16)</p>
+<p>所属子网：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/subnet?regionId=4&subnetId=subnet-5gcxlcwn">subnet-5gcxlcwn</a>(Default-Subnet)</p>
+<p>主IPv4公网IP：122.152.195.189</p>
+<p>主IPv4内网IP：172.17.0.11</p>
+<p>操作系统：CentOS 7.5 64位</p>
+<p>CPU：8核</p>
+<p>内存：16GB</p>
+<p>公网带宽：200Mbps</p>
+<h3 id="安全组-6"><a href="#安全组-6" class="headerlink" title="安全组"></a>安全组</h3><table>
+<thead>
+<tr>
+<th align="left">优先级</th>
+<th align="left">安全组ID&#x2F;名称</th>
+<th align="left">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-arn661kw?rid=4">sg-arn661kw</a>MongoDB端口开放</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-94o0rq9u?rid=4">sg-94o0rq9u</a>rabbitMQ远程访问</td>
+<td align="left">解绑</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/securitygroup/detail/sg-dq6962x8?rid=4">sg-dq6962x8</a>放通22，80，443，3389端口和ICMP协议-20190225102439194</td>
+<td align="left">解绑</td>
+</tr>
+</tbody></table>
+<h1 id="六丶服务器的NGINX配置"><a href="#六丶服务器的NGINX配置" class="headerlink" title="六丶服务器的NGINX配置"></a>六丶服务器的NGINX配置</h1><p>各服务器NGINX配置见网址<a target="_blank" rel="noopener" href="http://121.37.16.35/le/">http://121.37.16.35/le/</a></p>
+<h1 id="七丶子网"><a href="#七丶子网" class="headerlink" title="七丶子网"></a>七丶子网</h1><h2 id="subnet-5gcxlcwn"><a href="#subnet-5gcxlcwn" class="headerlink" title="subnet-5gcxlcwn"></a>subnet-5gcxlcwn</h2><p><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/vpc/subnet/detail?rid=4&id=subnet-5gcxlcwn">子网subnet-5gcxlcwn</a></p>
+<h3 id="基本信息-10"><a href="#基本信息-10" class="headerlink" title="基本信息"></a>基本信息</h3><p>子网ID：subnet-5gcxlcwn</p>
+<p>子网CIDR：172.17.0.0&#x2F;20</p>
+<p>所属网络：<a href="#vpc-7np03bts">vpc-7np03bts</a>（Default-VPC|172.17.0.0&#x2F;16）</p>
+<p>关联ACL：您还没有配置ACL绑定</p>
+<p>默认子网：是</p>
+<h4 id="包含资源-1"><a href="#包含资源-1" class="headerlink" title="包含资源"></a>包含资源</h4><p>基础云资源</p>
+<p>​	云服务器<em>6</em></p>
+<p>网络资源</p>
+<p>​	弹性网卡<em>6</em></p>
+<h2 id="路由策略"><a href="#路由策略" class="headerlink" title="路由策略"></a>路由策略</h2><table>
+<thead>
+<tr>
+<th align="left">目的端</th>
+<th align="left">下一跳类型</th>
+<th align="left">下一跳</th>
+<th align="left">备注</th>
+<th align="left">状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">172.17.0.0&#x2F;16</td>
+<td align="left">LOCAL</td>
+<td align="left">Local</td>
+<td align="left">系统默认下发，表示 VPC 内云服务器网络互通</td>
+<td align="left">已禁用</td>
+</tr>
+</tbody></table>
+<h2 id="ACL规则"><a href="#ACL规则" class="headerlink" title="ACL规则"></a>ACL规则</h2><p>您还没有配置AC</p>
+<h1 id="八丶总结"><a href="#八丶总结" class="headerlink" title="八丶总结"></a>八丶总结</h1><p>安全组：设置可以访问云服务器端口的放行规则</p>
+<p>负载均衡：高并发分流云服务器</p>
+<p>CDN：网络资源加速。缓存源服务器已访问的资源在CDN上，再次访问不需要访问源服务器</p>
+<p>私有网络：是一块您在腾讯云上自定义的逻辑隔离网络空间，您可以为 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/doc/product/213/495">云服务器</a>、<a target="_blank" rel="noopener" href="https://cloud.tencent.com/doc/product/236">云数据库</a> 等资源构建逻辑隔离的、用户自定义配置的网络空间，以提升用户云上资源的安全性，并满足不同的应用场景需求。私有网络有三个核心组成部分：私有网络网段、子网、路由表。</p>
+<p>云服务器：存放业务代码文件执行程序的服务器</p>
+<p>NGINX配置：云服务器上的NGINX服务的配置文件</p>
+<p>子网：私有网络里面的东西</p>
+<h1 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h1><table>
+<thead>
+<tr>
+<th align="left">主机记录</th>
+<th align="left">记录类型</th>
+<th align="left">线路类型</th>
+<th align="left">记录值</th>
+<th align="left">权重</th>
+<th align="left">优先级</th>
+<th align="left">TTL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">admin</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">212.129.231.178</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">admintest</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">212.129.231.178</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">file</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">122.152.195.189</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">fitness</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">118.25.188.77</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">job</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">118.25.188.77</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">media</td>
+<td align="left">CNAME</td>
+<td align="left">默认</td>
+<td align="left">media.shuobaobook.com.cdn.dnsv1.com.</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">parent</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">212.129.231.178</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">parenttest</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">212.129.231.178</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">report</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">118.25.188.77</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">school</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">212.129.231.178</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">schooltest</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">212.129.231.178</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">server</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">118.25.188.77</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">sp</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">212.129.231.178</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">teacher</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">212.129.231.178</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">teachertest</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">212.129.231.178</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">www</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">118.25.188.77</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_441c1fa0033997a90<br />c72bd8d4612d3fa.sp</td>
+<td align="left">CNAME</td>
+<td align="left">默认</td>
+<td align="left">53A920E1B974C5CA79272213BAD960A5.<br />06DE68C082A23A77E2922C7211F84A0B.<br />TTDsGnejpw.trust-provider.com.</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_71c25360aedee28510<br />25d2b0c0aa3e81.media</td>
+<td align="left">CNAME</td>
+<td align="left">默认</td>
+<td align="left">BB4D88E25AF372A740C8E84A5421A86C.<br />B5E15EE5C123CA04358966EAAFD19209.<br />TTDyFCbafu.trust-provider.com.</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_c8f2568e5c3b95c7a<br />90c74d38d7cf8a8.sp</td>
+<td align="left">CNAME</td>
+<td align="left">默认</td>
+<td align="left">62DCB0235CA518FB2C1731014D8C688C.<br />EB4495D5BE261CCCFAC8DDB5D8997E5E.<br />TTDyFBtxy9.trust-provider.com.</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_dnsauth.file</td>
+<td align="left">TXT</td>
+<td align="left">默认</td>
+<td align="left">202006131505332dbr39ldayrd7tl1tt<br />n099i554d96nfxhlirt7ntcfvrocqeh6</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_dnsauth.file</td>
+<td align="left">TXT</td>
+<td align="left">默认</td>
+<td align="left">202105090622442mwmqq9ii8hg05tc2o0lr<br />27xpleeca4oqf11e9sceco4ubsz4c</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_dnsauth.media</td>
+<td align="left">TXT</td>
+<td align="left">默认</td>
+<td align="left">202105090624251wj1g2mzgf84m8o4xx<br />wva4frdf356ps75t3n25askostorflcg</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_dnsauth.media</td>
+<td align="left">TXT</td>
+<td align="left">默认</td>
+<td align="left">202006110211163nzs87ejrre8lvvn6fv<br />clva52ydnbg49h8bibkpfg71khq572p</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_dnsauth.sp</td>
+<td align="left">TXT</td>
+<td align="left">默认</td>
+<td align="left">202007150859410xque2a3gqkvp6m386<br />g3rl1y1nmpks6gkgzz5l9us448z4ttm2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_dnsauth.sp</td>
+<td align="left">TXT</td>
+<td align="left">默认</td>
+<td align="left">2021050906171104o68mr1ljrxaip7270t<br />74qpmhx4lm8apmduebpll1a1afsxmb</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_ef5bbe68c0466f6a<br />84f2d314b34b55d4.media</td>
+<td align="left">CNAME</td>
+<td align="left">默认</td>
+<td align="left">99A12220921F08D0D26433B300B1FFAE.<br />54D47A0218A4755968594891267C3D6E.<br />TTDsGmvfl1.trust-provider.com.</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">_fc4e116f56fd85d53092<br />5577bd7ad999.file</td>
+<td align="left">CNAME</td>
+<td align="left">默认</td>
+<td align="left">99BBECC577D56459FAFCFECF829CA5EA.<br />2FE15DAF9765455B42ED8DD0960D4995.<br />TTDyFBk46n.trust-provider.com.</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">@</td>
+<td align="left">A</td>
+<td align="left">默认</td>
+<td align="left">118.25.188.77</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">600</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/23/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/08/23/%E8%8B%B9%E6%9E%9C%E5%BE%AE%E4%BF%A1%E5%88%B7%E6%96%B0%E9%97%AE%E9%A2%98/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E4%B8%B6%E5%AE%89%E5%85%A8%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">一 丶安全组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sg-arn661kw"><span class="nav-number">1.1.</span> <span class="nav-text">sg-arn661kw</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sg-pzxzmmro"><span class="nav-number">1.2.</span> <span class="nav-text">sg-pzxzmmro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sg-94o0rq9u"><span class="nav-number">1.3.</span> <span class="nav-text">sg-94o0rq9u</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sg-b7q4ujfm"><span class="nav-number">1.4.</span> <span class="nav-text">sg-b7q4ujfm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sg-4bupfxmq"><span class="nav-number">1.5.</span> <span class="nav-text">sg-4bupfxmq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sg-dq6962x8"><span class="nav-number">1.6.</span> <span class="nav-text">sg-dq6962x8</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E4%B8%B6%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="nav-number">2.</span> <span class="nav-text">二丶负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lb-fll8jioz"><span class="nav-number">2.1.</span> <span class="nav-text">lb-fll8jioz</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E5%90%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.</span> <span class="nav-text">监听配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">2.3.1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%91%E5%90%AC%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">2.3.2.</span> <span class="nav-text">监听管理器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS-443-%E5%B0%8F%E9%B2%B8%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">HTTPS:443 小鲸小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#sp-shuobaobook-com"><span class="nav-number">2.3.2.1.1.</span> <span class="nav-text">sp.shuobaobook.com</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B7%B2%E7%BB%91%E5%AE%9A%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1"><span class="nav-number">2.3.2.1.1.1.</span> <span class="nav-text">已绑定后端服务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-80-%E5%B0%8F%E9%B2%B8%E4%BC%B4%E8%AF%BB"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">HTTP:80 小鲸伴读</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#admin-shuobaobook-com"><span class="nav-number">2.3.2.2.1.</span> <span class="nav-text">admin.shuobaobook.com</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="nav-number">2.3.2.2.1.1.</span> <span class="nav-text">配置信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B7%B2%E7%BB%91%E5%AE%9A%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1-1"><span class="nav-number">2.3.2.2.1.2.</span> <span class="nav-text">已绑定后端服务</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parent-shuobaobook-com"><span class="nav-number">2.3.2.2.2.</span> <span class="nav-text">parent.shuobaobook.com</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B7%B2%E7%BB%91%E5%AE%9A%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1-2"><span class="nav-number">2.3.2.2.2.1.</span> <span class="nav-text">已绑定后端服务</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#school-shuobaobook-com"><span class="nav-number">2.3.2.2.3.</span> <span class="nav-text">school.shuobaobook.com</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B7%B2%E7%BB%91%E5%AE%9A%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1-3"><span class="nav-number">2.3.2.2.3.1.</span> <span class="nav-text">已绑定后端服务</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sp-shuobaobook-com-1"><span class="nav-number">2.3.2.2.4.</span> <span class="nav-text">sp.shuobaobook.com</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B7%B2%E7%BB%91%E5%AE%9A%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1-4"><span class="nav-number">2.3.2.2.4.1.</span> <span class="nav-text">已绑定后端服务</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#teacher-shuobaobook-com"><span class="nav-number">2.3.2.2.5.</span> <span class="nav-text">teacher.shuobaobook.com</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B7%B2%E7%BB%91%E5%AE%9A%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1-5"><span class="nav-number">2.3.2.2.5.1.</span> <span class="nav-text">已绑定后端服务</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.3.</span> <span class="nav-text">重定向配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">安全组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B7%B2%E7%BB%91%E5%AE%9A%E5%AE%89%E5%85%A8%E7%BB%84"><span class="nav-number">2.3.3.1.1.</span> <span class="nav-text">已绑定安全组</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E4%B8%B6%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91CDN"><span class="nav-number">3.</span> <span class="nav-text">三丶内容分发CDN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CND%E5%9F%9F%E5%90%8D"><span class="nav-number">3.1.</span> <span class="nav-text">CND域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">基础配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E7%AB%99%E4%BF%A1%E6%81%AF"><span class="nav-number">3.2.2.</span> <span class="nav-text">源站信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E6%BA%90%E7%AB%99"><span class="nav-number">3.2.3.</span> <span class="nav-text">主源站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6"><span class="nav-number">3.3.</span> <span class="nav-text">访问控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E7%AB%AF%E5%8F%A3"><span class="nav-number">3.3.1.</span> <span class="nav-text">访问端口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.4.</span> <span class="nav-text">缓存设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E9%94%AE%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE"><span class="nav-number">3.4.1.</span> <span class="nav-text">缓存键规则配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E7%BC%93%E5%AD%98%E8%BF%87%E6%9C%9F%E9%85%8D%E7%BD%AE"><span class="nav-number">3.4.2.</span> <span class="nav-text">节点缓存过期配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%A0%81%E7%BC%93%E5%AD%98"><span class="nav-number">3.4.3.</span> <span class="nav-text">状态码缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BA%90%E9%85%8D%E7%BD%AE"><span class="nav-number">3.5.</span> <span class="nav-text">回源配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%89%87%E5%9B%9E%E6%BA%90%E9%85%8D%E7%BD%AE"><span class="nav-number">3.5.1.</span> <span class="nav-text">分片回源配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%BA%90%E8%B7%9F%E9%9A%8F301-302%E9%85%8D%E7%BD%AE"><span class="nav-number">3.5.2.</span> <span class="nav-text">回源跟随301&#x2F;302配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%BA%90%E8%B6%85%E6%97%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">3.5.3.</span> <span class="nav-text">回源超时配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS%E9%85%8D%E7%BD%AE"><span class="nav-number">3.6.</span> <span class="nav-text">HTTPS配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS%E6%9C%8D%E5%8A%A1%EF%BC%88%E4%BB%98%E8%B4%B9%EF%BC%89"><span class="nav-number">3.6.1.</span> <span class="nav-text">HTTPS服务（付费）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS%E9%85%8D%E7%BD%AE-1"><span class="nav-number">3.6.2.</span> <span class="nav-text">HTTPS配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TLS%E7%89%88%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">3.6.3.</span> <span class="nav-text">TLS版本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OCSP%E8%A3%85%E8%AE%A2%E9%85%8D%E7%BD%AE"><span class="nav-number">3.6.4.</span> <span class="nav-text">OCSP装订配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE"><span class="nav-number">3.7.</span> <span class="nav-text">高级配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%93%8D%E5%BA%94%E5%A4%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">3.7.1.</span> <span class="nav-text">HTTP响应头配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E5%8E%8B%E7%BC%A9"><span class="nav-number">3.7.2.</span> <span class="nav-text">智能压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST%E8%AF%B7%E6%B1%82%E5%A4%A7%E5%B0%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">3.7.3.</span> <span class="nav-text">POST请求大小配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E4%B8%B6%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C"><span class="nav-number">4.</span> <span class="nav-text">四丶私有网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vpc-7np03bts"><span class="nav-number">4.1.</span> <span class="nav-text">vpc-7np03bts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-2"><span class="nav-number">4.2.</span> <span class="nav-text">基本信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-3"><span class="nav-number">4.2.1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E8%B5%84%E6%BA%90"><span class="nav-number">4.2.2.</span> <span class="nav-text">包含资源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E4%B8%B6%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">五丶云服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ins-69xx1bcd"><span class="nav-number">5.1.</span> <span class="nav-text">ins-69xx1bcd</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-4"><span class="nav-number">5.1.1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84-1"><span class="nav-number">5.1.2.</span> <span class="nav-text">安全组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ins-fdpc47r5"><span class="nav-number">5.2.</span> <span class="nav-text">ins-fdpc47r5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-5"><span class="nav-number">5.2.1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84-2"><span class="nav-number">5.2.2.</span> <span class="nav-text">安全组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ins-p1jhiw79"><span class="nav-number">5.3.</span> <span class="nav-text">ins-p1jhiw79</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-6"><span class="nav-number">5.3.1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84-3"><span class="nav-number">5.3.2.</span> <span class="nav-text">安全组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ins-0o9fnnlt"><span class="nav-number">5.4.</span> <span class="nav-text">ins-0o9fnnlt</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-7"><span class="nav-number">5.4.1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84-4"><span class="nav-number">5.4.2.</span> <span class="nav-text">安全组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ins-dq4s2kip"><span class="nav-number">5.5.</span> <span class="nav-text">ins-dq4s2kip</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-8"><span class="nav-number">5.5.1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84-5"><span class="nav-number">5.5.2.</span> <span class="nav-text">安全组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ins-jek3wmen"><span class="nav-number">5.6.</span> <span class="nav-text">ins-jek3wmen</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-9"><span class="nav-number">5.6.1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84-6"><span class="nav-number">5.6.2.</span> <span class="nav-text">安全组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E4%B8%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84NGINX%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">六丶服务器的NGINX配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E4%B8%B6%E5%AD%90%E7%BD%91"><span class="nav-number">7.</span> <span class="nav-text">七丶子网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#subnet-5gcxlcwn"><span class="nav-number">7.1.</span> <span class="nav-text">subnet-5gcxlcwn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF-10"><span class="nav-number">7.1.1.</span> <span class="nav-text">基本信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E8%B5%84%E6%BA%90-1"><span class="nav-number">7.1.1.1.</span> <span class="nav-text">包含资源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E7%AD%96%E7%95%A5"><span class="nav-number">7.2.</span> <span class="nav-text">路由策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ACL%E8%A7%84%E5%88%99"><span class="nav-number">7.3.</span> <span class="nav-text">ACL规则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB%E4%B8%B6%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">八丶总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">9.</span> <span class="nav-text">域名解析</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">勒德辉</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-08 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">勒德辉</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
