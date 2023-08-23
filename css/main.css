@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff49bd;
+  background: #f4d900;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2581,7 +2581,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 body {
-  background: url("https://th.bing.com/th/id/R.31df3a5a2d8462228734f95d459883e2?rik=7EE6TeWDk%2f%2bctQ&riu=http%3a%2f%2fwww.quazero.com%2fuploads%2fallimg%2f140303%2f1-140303214331.jpg&ehk=SpI7mz%2byLqOkT8BL79jcd3iCtQYNFlBHQzbtF1p0vuQ%3d&risl=&pid=ImgRaw&r=0");
+  background: url("https://bpic.588ku.com/back_our/20210217/bg/28ae5ee1d925d.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
